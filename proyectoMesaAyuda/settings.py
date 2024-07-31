@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-^-^x(cpkl1-p)mxyl0i^iwq-jy+r#hp%9$i6+_gewp^+h_h9z!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+CORS_ORIGIN_ALLOW_ALL = True
+ALLOWED_HOSTS = ['mesaayudasenactpi.pythonanywhere.com']
 
 
 # Application definition
@@ -40,9 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'appMesaAyuda',
     'bootstrap5',
+    'rest_framework',
+    'corsheaders',
+    'coreapi',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -148,7 +153,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # recaptcha
-GOOGLE_RECAPTCHA_SECRET_KEY = '6Lf2r3coAAAAAIs4RnLRtXZRVnfG8KTazeauAr0v'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LdpH7cpAAAAAJ-r11shEPkWUc0REbgE19SFBft1'
 
 # variables configuración correo
 EMAIL_HOST = 'smtp.gmail.com'
@@ -156,3 +161,9 @@ EMAIL_HOST_USER = 'jesuspaladinez18@gmail.com'
 EMAIL_HOST_PASSWORD = 'njynostitfoeatbk'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+# documentar api
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}
