@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^-^x(cpkl1-p)mxyl0i^iwq-jy+r#hp%9$i6+_gewp^+h_h9z!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-CORS_ORIGIN_ALLOW_ALL = True
-ALLOWED_HOSTS = ['mesaayudasenactpi.pythonanywhere.com']
+CORS_ORIGIN_ALLOW_ALL = False
+ALLOWED_HOSTS = ['127.0.0.1', 'mesaayudasenactpi.pythonanywhere.com']
 
 
 # Application definition
@@ -90,7 +90,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "mesaAyuda",
         "USER": "root",
-        "PASSWORD": "",
+        "PASSWORD": "123456",
         "HOST": "localhost",
         "PORT": "3306"
     },
@@ -98,7 +98,7 @@ DATABASES = {
     #     'ENGINE': 'djongo',        
     #     'NAME': 'mesaAyuda',        
     #     'CLIENT': {
-    #         'host': 'mongodb+srv://Paladinez:Xy12345@cluster0.vhvbcg7.mongodb.net/mesaAyuda?retryWrites=true&w=majority&appName=Cluster0'
+    #         'host': 'mongodb+srv://adso:2669742@cluster0.vhvbcg7.mongodb.net/mesaAyuda?retryWrites=true&w=majority&appName=Cluster0'
     #     }
     # },
 }
@@ -141,7 +141,9 @@ USE_TZ = True
 # usuario del app
 AUTH_USER_MODEL = 'appMesaAyuda.User'
 
-STATIC_URL = os.path.join(BASE_DIR, '/static/')
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 
